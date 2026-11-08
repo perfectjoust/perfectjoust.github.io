@@ -4,57 +4,244 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Going Full Speed Privacy Policy</title>
-<link rel="stylesheet" href="../../style.css">
+<meta name="description" content="What Going Full Speed by Perfect Joust collects, why, and the choices you have.">
+<link rel="icon" href="../../assets/going-full-speed/icon.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0b1020;
+  --panel: #131a2e;
+  --panel2: #18213a;
+  --line: #243050;
+  --text: #f2f4fa;
+  --muted: #a7b0c6;
+  --yellow: #ffc83a;
+  --orange: #ff8a1f;
+  --blue: #39b6ff;
+  --green: #5ad17a;
+  --red: #ff6b6b;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 16px/1.65 "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--yellow); }
+img { display: block; max-width: 100%; height: auto; }
+.wrap { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+
+/* Top bar */
+.top { position: absolute; inset: 0 0 auto 0; z-index: 5; }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; max-width: 1120px; }
+.brand { font-family: "Archivo Black", sans-serif; letter-spacing: .14em; text-transform: uppercase; font-size: 14px; color: #fff; text-decoration: none; text-shadow: 0 2px 8px rgba(0,0,0,.5); }
+.brand span { color: var(--yellow); }
+.top nav a { color: #fff; text-decoration: none; font-weight: 600; font-size: 14px; margin-left: 22px; text-shadow: 0 2px 8px rgba(0,0,0,.5); }
+.top nav a:hover { color: var(--yellow); }
+
+/* Hero */
+.hero {
+  position: relative; min-height: 420px; display: flex; align-items: flex-end;
+  background: #0b1020 url("../../assets/going-full-speed/promo.jpg") center 35% / cover no-repeat;
+}
+.hero::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(0deg, var(--bg) 0%, rgba(11,16,32,.85) 30%, rgba(11,16,32,.25) 70%, rgba(11,16,32,.55) 100%);
+}
+.hero .wrap { position: relative; z-index: 1; padding-bottom: 36px; width: 100%; }
+.hero .id { display: flex; align-items: center; gap: 18px; }
+.hero .id img { width: 84px; height: 84px; border-radius: 20px; border: 3px solid rgba(255,255,255,.9); box-shadow: 0 10px 30px rgba(0,0,0,.45); }
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--yellow); margin: 0 0 6px; }
+h1 { font-family: "Archivo Black", sans-serif; font-weight: 400; font-size: clamp(30px, 5.5vw, 52px); line-height: 1; margin: 0; text-transform: uppercase; }
+.updated { color: var(--muted); font-size: 14px; margin: 14px 0 0; }
+
+/* Intro + summary */
+.intro { font-size: 18px; color: #dfe4f0; margin: 28px 0 22px; }
+.glance { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 18px; }
+.chip { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
+.chip b { display: block; font-size: 15px; margin-bottom: 4px; }
+.chip span { color: var(--muted); font-size: 13.5px; line-height: 1.45; display: block; }
+.chip .dot { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; font-size: 18px; margin-bottom: 10px; }
+.yes .dot { background: rgba(90,209,122,.15); }
+.no .dot { background: rgba(255,107,107,.15); }
+.ads .dot { background: rgba(57,182,255,.15); }
+.pay .dot { background: rgba(255,200,58,.15); }
+
+/* Contents */
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 26px 0 8px; }
+.toc a { font-size: 13.5px; font-weight: 600; text-decoration: none; color: var(--text); background: var(--panel2); border: 1px solid var(--line); border-radius: 999px; padding: 6px 13px; }
+.toc a:hover { border-color: var(--yellow); color: var(--yellow); }
+
+/* Sections */
+section.card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 26px 28px; margin: 14px 0; scroll-margin-top: 16px; }
+section.card h2 { display: flex; align-items: center; gap: 12px; font-size: 20px; margin: 0 0 12px; }
+section.card h2 .n { flex: none; width: 30px; height: 30px; border-radius: 9px; background: linear-gradient(135deg, var(--yellow), var(--orange)); color: #241400; font-size: 14px; font-weight: 800; display: grid; place-items: center; }
+section.card p { margin: 0 0 10px; color: #d6dbe8; }
+section.card p:last-child { margin-bottom: 0; }
+section.card ul { margin: 0; padding: 0; list-style: none; }
+section.card li { position: relative; padding: 10px 0 10px 30px; border-top: 1px solid var(--line); color: #d6dbe8; }
+section.card li:first-child { border-top: 0; padding-top: 2px; }
+section.card li::before { content: ""; position: absolute; left: 6px; top: 19px; width: 9px; height: 9px; border-radius: 50%; background: var(--yellow); }
+section.card li:first-child::before { top: 11px; }
+.tag { display: inline-block; font-size: 11.5px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; padding: 2px 8px; border-radius: 6px; margin-right: 6px; vertical-align: 1px; }
+.tag.always { background: rgba(167,176,198,.15); color: #c9d0e0; }
+.tag.consent { background: rgba(90,209,122,.15); color: var(--green); }
+.tag.vip { background: rgba(255,200,58,.15); color: var(--yellow); }
+
+/* Contact */
+.contact { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; background: linear-gradient(135deg, #1c2a52, #142042); border: 1px solid #2d3d6b; border-radius: 16px; padding: 26px 28px; margin: 22px 0 0; }
+.contact h2 { font-family: "Archivo Black", sans-serif; font-weight: 400; font-size: 22px; margin: 0 0 4px; }
+.contact p { margin: 0; color: #cdd5e8; }
+.btn { display: inline-block; padding: 12px 20px; border-radius: 10px; font-weight: 700; font-size: 15px; text-decoration: none; background: var(--yellow); color: #241400; }
+.btn:hover { background: #ffd666; }
+
+footer { border-top: 1px solid var(--line); margin-top: 48px; padding: 26px 0 36px; color: var(--muted); font-size: 14px; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
+footer a { color: var(--muted); text-decoration: none; margin-left: 18px; }
+footer a:first-child { margin-left: 0; }
+footer a:hover { color: var(--yellow); }
+
+@media (max-width: 760px) {
+  .glance { grid-template-columns: repeat(2, 1fr); }
+  .hero { min-height: 340px; }
+  section.card { padding: 22px 20px; }
+}
+@media (max-width: 420px) {
+  .wrap { padding: 0 16px; }
+  .hero .id img { width: 64px; height: 64px; border-radius: 16px; }
+  .top nav a { margin-left: 14px; }
+}
+</style>
 </head>
 <body>
-<main>
-<header class="site"><a href="../../">Perfect Joust</a></header>
-<h1>Going Full Speed — Privacy Policy</h1>
-<p class="updated">Last updated: 8 November 2026</p>
-<p>This policy explains what Going Full Speed, made by Perfect Joust, collects when you play, why, and the choices you have.</p>
 
-<h2>What we collect</h2>
-<ul>
-  <li>Basic device information each time the game starts: the game's ID and version, the device model and maker, the Android version, the device language and region, when the game was installed, and which other Perfect Joust games are installed on the same device.</li>
-  <li>With "Ad results" turned on: your device's advertising ID and Android ID, and which of our own game promotions you saw, opened or installed.</li>
-  <li>With "Play stats" turned on: how long and how often you play, and which races you start, win or lose.</li>
-  <li>When you buy VIP from our VIP offer: which offer and price you saw and whether you bought it, so we can see which offer works best.</li>
-</ul>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../../">Perfect <span>Joust</span></a>
+    <nav>
+      <a href="../../#games">Games</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-<h2>What we do not collect</h2>
-<p>Your name, email address, precise location, contacts, or anything you type.</p>
+<div class="hero">
+  <div class="wrap">
+    <div class="id">
+      <img src="../../assets/going-full-speed/icon.jpg" alt="Going Full Speed icon" width="84" height="84">
+      <div>
+        <p class="eyebrow">Privacy Policy</p>
+        <h1>Going Full Speed</h1>
+      </div>
+    </div>
+    <p class="updated">Last updated: 8 November 2026</p>
+  </div>
+</div>
 
-<h2>Why we collect it</h2>
-<p>To suggest other Perfect Joust games you might like, to avoid showing you games you already have, to see which of our promotions work, and to understand how the game is played so we can fix and balance it. We do not sell your data, and we do not use it to track you across other companies' apps or websites.</p>
+<main class="wrap">
+  <p class="intro">This policy explains what Going Full Speed, made by Perfect Joust, collects when you play, why, and the choices you have.</p>
 
-<h2>Who we share it with</h2>
-<p>Idleloot (sdk.idleloot.com), the cross-promotion and analytics service Perfect Joust uses, which processes the data for us. Purchases are handled by Amazon; we never see your payment details.</p>
+  <div class="glance">
+    <div class="chip yes"><div class="dot">✅</div><b>You choose</b><span>Ad and play stats are only sent with your OK.</span></div>
+    <div class="chip no"><div class="dot">🚫</div><b>No personal info</b><span>No name, email, location or contacts.</span></div>
+    <div class="chip ads"><div class="dot">🎮</div><b>Only our games</b><span>No ads from other companies.</span></div>
+    <div class="chip pay"><div class="dot">🔒</div><b>Safe payments</b><span>Amazon handles them. We never see card details.</span></div>
+  </div>
 
-<h2>Your consent</h2>
-<p>On first launch the game asks before any device IDs are sent. "Allow all" turns on both "Ad results" and "Play stats"; under "Manage options" you can turn either off.</p>
+  <nav class="toc" aria-label="Contents">
+    <a href="#collect">What we collect</a>
+    <a href="#not">What we don't</a>
+    <a href="#why">Why</a>
+    <a href="#share">Who we share with</a>
+    <a href="#consent">Your consent</a>
+    <a href="#choices">Your choices</a>
+    <a href="#purchases">Purchases</a>
+    <a href="#children">Children</a>
+  </nav>
 
-<h2>Your choices</h2>
-<p>You can reset or limit your advertising ID at any time in your Fire device's settings. To change your in-game choices, clear the game's data or reinstall it and choose again on the first screen.</p>
+  <section class="card" id="collect">
+    <h2><span class="n">1</span>What we collect</h2>
+    <ul>
+      <li><span class="tag always">Always</span>Basic device information each time the game starts: the game's ID and version, the device model and maker, the Android version, the device language and region, when the game was installed, and which other Perfect Joust games are installed on the same device.</li>
+      <li><span class="tag consent">With "Ad results"</span>Your device's advertising ID and Android ID, and which of our own game promotions you saw, opened or installed.</li>
+      <li><span class="tag consent">With "Play stats"</span>How long and how often you play, and which races you start, win or lose.</li>
+      <li><span class="tag vip">VIP offer</span>When you see our VIP offer: which offer and price you saw and whether you bought it, so we can see which offer works best.</li>
+    </ul>
+  </section>
 
-<h2>Storage</h2>
-<p>Your game progress, coins and balls are saved on your device.</p>
+  <section class="card" id="not">
+    <h2><span class="n">2</span>What we do not collect</h2>
+    <p>Your name, email address, precise location, contacts, or anything you type.</p>
+  </section>
 
-<h2>Purchases</h2>
-<p>Coin packs and VIP are bought through Amazon's In-App Purchasing. Amazon processes the payment; we never see your payment details.</p>
+  <section class="card" id="why">
+    <h2><span class="n">3</span>Why we collect it</h2>
+    <p>To suggest other Perfect Joust games you might like, to avoid showing you games you already have, to see which of our promotions work, and to understand how the game is played so we can fix and balance it.</p>
+    <p>We do not sell your data, and we do not use it to track you across other companies' apps or websites.</p>
+  </section>
 
-<h2>Advertising</h2>
-<p>Going Full Speed shows promotions for other Perfect Joust games only (for example the "More Games" screen). It shows no advertising from other companies.</p>
+  <section class="card" id="share">
+    <h2><span class="n">4</span>Who we share it with</h2>
+    <p>Idleloot (sdk.idleloot.com), the cross-promotion and analytics service Perfect Joust uses, which processes the data for us. Purchases are handled by Amazon; we never see your payment details.</p>
+  </section>
 
-<h2>Children</h2>
-<p>Going Full Speed is a game for all ages and is not directed at children under 13. A parent or guardian who believes a child's information was collected can contact us and we will delete it.</p>
+  <section class="card" id="consent">
+    <h2><span class="n">5</span>Your consent</h2>
+    <p>On first launch the game asks before any device IDs are sent. "Allow all" turns on both "Ad results" and "Play stats"; under "Manage options" you can turn either off.</p>
+  </section>
 
-<h2>Changes to this policy</h2>
-<p>If this policy changes, the new version is published at the same address with a new date.</p>
+  <section class="card" id="choices">
+    <h2><span class="n">6</span>Your choices</h2>
+    <p>You can reset or limit your advertising ID at any time in your Fire device's settings. To change your in-game choices, clear the game's data or reinstall it and choose again on the first screen.</p>
+  </section>
 
-<h2>Contact</h2>
-<p>Questions about privacy: <a href="mailto:perfectgamesjoust1@outlook.com">perfectgamesjoust1@outlook.com</a></p>
+  <section class="card" id="storage">
+    <h2><span class="n">7</span>Storage</h2>
+    <p>Your game progress, coins and balls are saved on your device.</p>
+  </section>
 
-<footer>&copy; 2026 Perfect Joust</footer>
+  <section class="card" id="purchases">
+    <h2><span class="n">8</span>Purchases</h2>
+    <p>Coin packs and VIP are bought through Amazon's In-App Purchasing. Amazon processes the payment; we never see your payment details.</p>
+  </section>
+
+  <section class="card" id="ads">
+    <h2><span class="n">9</span>Advertising</h2>
+    <p>Going Full Speed shows promotions for other Perfect Joust games only (for example the "More Games" screen). It shows no advertising from other companies.</p>
+  </section>
+
+  <section class="card" id="children">
+    <h2><span class="n">10</span>Children</h2>
+    <p>Going Full Speed is a game for all ages and is not directed at children under 13. A parent or guardian who believes a child's information was collected can contact us and we will delete it.</p>
+  </section>
+
+  <section class="card" id="changes">
+    <h2><span class="n">11</span>Changes to this policy</h2>
+    <p>If this policy changes, the new version is published at the same address with a new date.</p>
+  </section>
+
+  <div class="contact" id="contact">
+    <div>
+      <h2>Questions about privacy?</h2>
+      <p>Email us and we'll get back to you.</p>
+    </div>
+    <a class="btn" href="mailto:perfectgamesjoust1@outlook.com?subject=Going%20Full%20Speed%20privacy">perfectgamesjoust1@outlook.com</a>
+  </div>
 </main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Perfect Joust</span>
+    <span>
+      <a href="../../">Home</a>
+      <a href="../../mister-crank/privacy-policy/">Mister Crank privacy policy</a>
+    </span>
+  </div>
+</footer>
+
 </body>
 </html>
